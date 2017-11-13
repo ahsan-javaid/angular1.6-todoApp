@@ -6,6 +6,9 @@
   "scripts": {
     "start": "webpack --watch --progress | node server.js"
   },
+  "engines": {
+    "node": "6.11.3"
+  },
   "dependencies": {
     "angular": "^1.6.5",
     "angular-ui-router": "^1.0.3",
