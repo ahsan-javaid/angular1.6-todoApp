@@ -11,8 +11,7 @@
     "angular-ui-router": "^1.0.3",
     "body-parser": "^1.18.2",
     "bootstrap-sass": "^3.3.7",
-    "express": "^4.16.2",
-    "jquery": "^3.2.1"
+    "express": "^4.16.2"
   } ,
   "devDependencies": {
     "babel-core": "^6.25.0",

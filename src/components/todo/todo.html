@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<form class="form" ng-submit="$ctrl.addTask($event)">
+				<div class="input-group">
+					<input type="text" class="form-control" required maxlength="30">
+					<span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                    <span class="glyphicon glyphicon-plus"></span> Add Task</button>
+                    </span>
+				</div>
+			</form>
+			<hr/>
+			<ul class="list-group" ng-show="$ctrl.tasks.length > 0">
+				<li class="list-group-item clearfix task" ng-repeat="todo in $ctrl.tasks" ng-class="{disabled: todo.done}">
+					<p class="lead" ng-show="!todo.edit"> <span class="glyphicon glyphicon-tasks" style="top:5px"></span> &nbsp;{{todo.task}}
+						<span class="pull-right">{{todo.date | date:'MM/dd/yyyy @ h:mma'}} </span>
+					</p>
+					<form ng-show="todo.edit" class="form" ng-submit="$ctrl.editTask($event, $index)">
+						<div class="input-group">
+							<input type="text" value="{{todo.task}}" class="form-control" required maxlength="30">
+							<span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                    <span class="glyphicon glyphicon-edit"></span> Save Task</button>
+                    </span>
+						</div>
+					</form>
+					<br>
+					<div>
+                        <span class="pull-right">
+                        <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"
+																	 ng-click="todo.edit = true"></span></button>
+                        <button class="btn btn-default btn-xs" ng-show="!todo.done"><span class="glyphicon glyphicon-ok"
+																						  ng-click="$ctrl.doneTask($index)"></span></button>
+                        <button class="btn btn-default btn-xs" ng-show="todo.done"><span class="glyphicon glyphicon-repeat"
+																						 ng-click="$ctrl.unDoneTask($index)"></span></button>
+                        <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"
+																	 ng-click="$ctrl.deleteTask($index)"></span></button>
+                        </span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

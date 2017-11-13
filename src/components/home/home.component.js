@@ -4,9 +4,5 @@ import controller from './home.controller';
 export default {
 	template: template,
 	controller: controller,
-    controllerAs: '$ctrl',
-    bindings: {
-
-    }
-
+    controllerAs: '$ctrl'
 };
